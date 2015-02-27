@@ -3,7 +3,7 @@
 
 Any requests you send to */capture/[tag]/...* will be stored and can then be viewed.  This is useful for API's that accept a callback URL and send back their response asynchronously.
 
-See the Getting Started page for more details.
+See the *Getting Started* page for more details: http://requestcapture.appspot.com/start
 
 To build it:
 ```
