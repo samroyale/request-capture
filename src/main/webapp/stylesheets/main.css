@@ -1,0 +1,14 @@
+table.requests {
+  color: black;
+  background-color: #CCCCFF;
+  border-collapse: collapse;
+}
+
+td {
+  padding: 5px;
+}
+
+tr.even {
+  color: black;
+  background-color: #FFCCCC;
+}

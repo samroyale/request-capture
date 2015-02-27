@@ -1,0 +1,36 @@
+.table tr.odd th,.table tr.odd td {
+	background-color: #efefef
+}
+
+.table-requests {
+	table-layout: fixed;
+}
+
+.table-requests th.method,.table-requests td.method {
+	width: 100px
+}
+
+.table-requests th.timestamp,.table-requests td.timestamp {
+	width: 300px
+}
+
+.table-requests th.url,.table-requests td.url {
+	word-wrap: break-word
+}
+
+.with-gap {
+	margin-bottom: 20px;
+}
+
+.with-break {
+	margin-top: 20px;
+}
+
+.request-summary {
+	word-wrap: break-word
+}
+
+.padded {
+	margin-bottom: 10px;
+}
+

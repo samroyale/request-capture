@@ -1,0 +1,57 @@
+<html>
+  <head>
+    <title>Request Capture</title>
+    <link type="text/css" rel="stylesheet" href="/css/bootstrap.min.css"></link>
+    <link type="text/css" rel="stylesheet" href="/css/app.extras.css"></link>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"></meta>
+    <script type="text/javascript" src="/js/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript">
+      function refreshTags() {
+        $.ajax({
+          url: '/tags',
+          success: function(response) {
+            // update tags element
+            $('#tags').html(response);
+          }
+        });
+      }      
+
+      $(function() {
+        refreshTags();
+        setInterval(refreshTags, 10000);
+      });
+    </script>
+  </head>
+
+  <body>
+    <div class="container">
+      <ul class="breadcrumb">
+        <li class="active">Home</li>
+      </ul>
+      
+      <h1 class="page-header">Request Capture</h1>
+      
+      <p class="with-gap">See <a href="/start">Getting Started</a> for a description of what this site does and how it works.</p>
+      <p class="with-gap">Or take a look at <a href="/list">Recent Requests</a> to see what's been captured recently.</p>
+      
+      <hr>
+      
+      <form class="form-inline" action="/list">
+        <label>Find tagged requests:</label>
+        <input class="input-medium" type="text" name="tag" placeholder="Enter tag">
+        <button type="submit" class="btn">Go</button>
+      </form>
+
+      <form class="form-inline" action="/find">
+        <label>Find request by key:</label>
+        <input class="input-medium" type="text" name="key" placeholder="Enter key">
+        <button type="submit" class="btn">Go</button>
+      </form>
+      
+      <hr>
+      
+      <h2>Popular Tags</h2>
+      <div id="tags"></div>   
+    </div>
+  </body>
+</html>

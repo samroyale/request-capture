@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+
+<web-app xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.5" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+
+	<servlet>
+		<servlet-name>RequestEcho</servlet-name>
+		<servlet-class>com.se.web.EchoRequestServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>RequestEcho</servlet-name>
+		<url-pattern>/echo/*</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>RequestCapture</servlet-name>
+		<servlet-class>com.se.web.CaptureRequestServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>RequestCapture</servlet-name>
+		<url-pattern>/capture/*</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>ListRequests</servlet-name>
+		<servlet-class>com.se.web.ListRequestsServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ListRequests</servlet-name>
+		<url-pattern>/list</url-pattern>
+	</servlet-mapping>
+	<filter-mapping>
+        <filter-name>BreadcrumbsFilter</filter-name>
+        <url-pattern>/list</url-pattern>
+    </filter-mapping>
+	
+	<servlet>
+		<servlet-name>RecentRequests</servlet-name>
+		<servlet-class>com.se.web.RecentRequestsServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>RecentRequests</servlet-name>
+		<url-pattern>/requests</url-pattern>
+	</servlet-mapping>
+	<filter-mapping>
+        <filter-name>BreadcrumbsFilter</filter-name>
+        <url-pattern>/requests</url-pattern>
+    </filter-mapping>
+	
+	<servlet>
+		<servlet-name>RequestDetail</servlet-name>
+		<servlet-class>com.se.web.RequestDetailServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>RequestDetail</servlet-name>
+		<url-pattern>/detail</url-pattern>
+	</servlet-mapping>
+	<filter-mapping>
+        <filter-name>BreadcrumbsFilter</filter-name>
+        <url-pattern>/detail</url-pattern>
+    </filter-mapping>
+	
+	<servlet>
+		<servlet-name>FindRequest</servlet-name>
+		<servlet-class>com.se.web.FindRequestServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>FindRequest</servlet-name>
+		<url-pattern>/find</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>PopularTags</servlet-name>
+		<servlet-class>com.se.web.PopularTagsServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>PopularTags</servlet-name>
+		<url-pattern>/tags</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>GettingStarted</servlet-name>
+		<servlet-class>com.se.web.GettingStartedServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>GettingStarted</servlet-name>
+		<url-pattern>/start</url-pattern>
+	</servlet-mapping>
+	<filter-mapping>
+        <filter-name>BreadcrumbsFilter</filter-name>
+        <url-pattern>/start</url-pattern>
+    </filter-mapping>
+	
+	<filter>
+		<filter-name>BreadcrumbsFilter</filter-name>
+		<filter-class>com.se.web.BreadcrumbsFilter</filter-class>
+		<!-- <init-param>
+			<param-name>logType</param-name>
+			<param-value>special</param-value>
+		</init-param> -->
+	</filter>
+	
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+	</welcome-file-list>
+
+	<error-page>
+        <error-code>500</error-code>
+        <location>/error500.jsp</location>
+    </error-page>
+    	
+	<error-page>
+        <error-code>404</error-code>
+        <location>/error404.jsp</location>
+    </error-page>
+    	
+<!--	<servlet>
+		<servlet-name>SystemServiceServlet</servlet-name>
+		<servlet-class>com.google.api.server.spi.SystemServiceServlet</servlet-class>
+		<init-param>
+			<param-name>services</param-name>
+			<param-value/>
+		</init-param>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>SystemServiceServlet</servlet-name>
+		<url-pattern>/_ah/spi/*</url-pattern>
+	</servlet-mapping>-->
+	
+</web-app>
