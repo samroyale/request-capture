@@ -7,6 +7,8 @@ Any requests you send to */capture/[tag]/...* will be stored and can then be vie
 
 See the *Getting Started* page for more details: http://requestcapture.appspot.com/start
 
+Requires Java and Maven to build + run locally (tested most recently with Java 1.7 and Maven 3.2.2)
+
 To build it:
 ```
 mvn clean install
