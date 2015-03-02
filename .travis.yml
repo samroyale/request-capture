@@ -1,1 +1,16 @@
 language: java
+
+env:
+  global:
+    - secure: I7oiwoXc7muUMzpUteeU5QeOC0J2jNdjgDpEv4a75+jCEreIBbfwKuSc9u/O3ikRHonxcxaAe9CgK/3YbIJZCdFwtCB/CfzA/IrXli/M3XJWGu5yiP1YiumGtTMCWfuo7tiX8+Nr3AcHJi28vYBC42kW2htwqB//Po98uyYOKOM=
+    - secure: lekW7pmh7bgv/t/fzvCYLGQgb2jBOMuxt9uCy0uxyEyaHVwWsBhViM4X0b/xjRBr/cNkot8c5pxr+lkXzMh20BvuGb4nLJjkoManwAAjDWArOK5QONmJ3l/4D0SwRuXieaV/IRCBVoba0f8Wf+sDAaRZZ1gmXxz/fGAkNcpOV8A=
+    
+addons:
+  sauce_connect: true
+  
+before_script:
+  - mvn appengine:devserver
+  - sleep 5 # give devserver some time to start
+  
+script:
+  - mvn test
