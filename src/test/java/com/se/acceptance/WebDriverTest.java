@@ -33,8 +33,8 @@ public class WebDriverTest {
 	@Test
 	public void webDriver() throws Exception {
 		// Make the browser get the page and check its title
-		driver.get("http://www.amazon.com/");
-		assertThat(driver.getTitle()).isEqualTo("Amazon.com: Online Shopping for Electronics, Apparel, Computers, Books, DVDs & more");
+		driver.get("http://localhost:8888/");
+		assertThat(driver.getTitle()).isEqualTo("Request Capture");
 	}
 
 	@After

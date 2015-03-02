@@ -9,7 +9,7 @@ addons:
   sauce_connect: true
   
 before_script:
-  - mvn appengine:devserver
+  - mvn appengine:devserver_start
   - sleep 5 # give devserver some time to start
   
 script:
