@@ -59,7 +59,8 @@ public class CapturedRequestBuilder {
 		}
 		return uri + "?" + queryString;
 	}
-
+	
+	@SuppressWarnings("unchecked")
 	private Map<String, String> getHeaders() {
 		Map<String, String> headerMap = new LinkedHashMap<String, String>();
 		Enumeration<String> headers = request.getHeaderNames();

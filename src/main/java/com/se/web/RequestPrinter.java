@@ -41,6 +41,7 @@ public class RequestPrinter {
 		return uri + "?" + queryString;
 	}
 
+	@SuppressWarnings("unchecked")
 	private void printHeaders() {
 		Enumeration<String> headers = request.getHeaderNames();
 		while (headers.hasMoreElements()) {

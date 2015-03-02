@@ -12,7 +12,7 @@ public class Breadcrumbs {
 	private static final String URL_ENCODING = "UTF-8";
 	
 	private static final List<Breadcrumb> DEFAULT_BREADCRUMBS = Arrays.asList(new Breadcrumb(Page.HOME));
-		
+	
 	private List<Breadcrumb> breadcrumbs;
 
 	private Breadcrumbs() {
@@ -20,7 +20,7 @@ public class Breadcrumbs {
 	}
 
 	private Breadcrumbs(List<Breadcrumb> breadcrumbs) {
-		this.breadcrumbs = breadcrumbs;
+		this.breadcrumbs = new ArrayList<>(breadcrumbs);
 	}
 
 	public static Breadcrumbs parseBreadcrumbs(String breadcrumbsFormat) {

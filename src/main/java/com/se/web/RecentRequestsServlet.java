@@ -1,7 +1,5 @@
 package com.se.web;
 
-import static com.se.web.Breadcrumbs.parseBreadcrumbs;
-
 import java.io.IOException;
 import java.util.List;
 
