@@ -8,6 +8,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+/**
+ * Servlet that displays the Getting Started page.
+ * 
+ * @author seldred
+ */
 @SuppressWarnings("serial")
 public class GettingStartedServlet extends HttpServlet {
 

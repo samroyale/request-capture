@@ -12,6 +12,11 @@ import com.se.data.CapturedRequest;
 import com.se.data.CapturedRequestService;
 import com.se.data.CapturedRequestServiceDatastoreImpl;
 
+/**
+ * Servlet that captures HTTP requests and stores them for later retrieval.
+ * 
+ * @author seldred
+ */
 @SuppressWarnings("serial")
 public class CaptureRequestServlet extends HttpServlet {
 

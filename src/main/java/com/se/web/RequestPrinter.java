@@ -7,6 +7,11 @@ import java.util.Enumeration;
 
 import javax.servlet.http.HttpServletRequest;
 
+/**
+ * Utility class that 'prints' a HTTP request to the given PrintWriter.
+ * 
+ * @author seldred
+ */
 public class RequestPrinter {
 
 	private HttpServletRequest request;

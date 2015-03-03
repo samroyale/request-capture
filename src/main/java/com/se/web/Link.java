@@ -1,5 +1,10 @@
 package com.se.web;
 
+/**
+ * Simple value object that represents a link on a page.
+ * 
+ * @author seldred
+ */
 public class Link {
 
 	private String text;

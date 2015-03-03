@@ -12,6 +12,11 @@ import javax.servlet.http.HttpServletRequest;
 
 import com.se.data.CapturedRequest;
 
+/**
+ * Builds a CapturedRequest instance from the given HTTP request.
+ * 
+ * @author seldred
+ */
 public class CapturedRequestBuilder {
 
 	private static final String CAPTURE_PREFIX = "/capture";

@@ -7,6 +7,12 @@ import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 
+/**
+ * Used to create the breadcrumb trail at the top of each page. The complexity reflects the fact
+ * that some pages (eg. Recent Requests) can appear in different places and with different contexts.
+ *    
+ * @author seldred
+ */
 public class Breadcrumbs {
 
 	private static final String URL_ENCODING = "UTF-8";

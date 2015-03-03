@@ -8,6 +8,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+/**
+ * Servlet that displays a list of recent requests, either based on a given tag or not. In fact,
+ * most of the work is done by RecentRequestsServlet, invoked after the main page has loaded.
+ *   
+ * @author seldred
+ */
 @SuppressWarnings("serial")
 public class ListRequestsServlet extends HttpServlet {
 

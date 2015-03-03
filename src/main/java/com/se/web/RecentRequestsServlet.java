@@ -13,6 +13,11 @@ import com.se.data.CapturedRequest;
 import com.se.data.CapturedRequestService;
 import com.se.data.CapturedRequestServiceDatastoreImpl;
 
+/**
+ * Servlet that retrieves the most recent requests, either based on a given tag or not.
+ * 
+ * @author seldred
+ */
 @SuppressWarnings("serial")
 public class RecentRequestsServlet extends HttpServlet {
 

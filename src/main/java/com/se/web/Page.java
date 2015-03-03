@@ -1,5 +1,10 @@
 package com.se.web;
 
+/**
+ * Enum that represents pages in the app - useful for breadcrumbs and displayable servlets.
+ * 
+ * @author seldred
+ */
 public enum Page {
 
 	HOME("h", "Home", "/"),

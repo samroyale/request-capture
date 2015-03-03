@@ -12,6 +12,11 @@ import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 
+/**
+ * A servlet filter that processes and applies breadcrumbs outside the servlets/pages that need it.
+ * 
+ * @author seldred
+ */
 public class BreadcrumbsFilter implements Filter {
 
     private FilterConfig filterConfig;

@@ -9,6 +9,11 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.se.data.RequestKey;
 
+/**
+ * Servlet that finds captured requests based on the given key.
+ * 
+ * @author seldred
+ */
 @SuppressWarnings("serial")
 public class FindRequestServlet extends HttpServlet {
 

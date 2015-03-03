@@ -5,7 +5,7 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 /**
- * Simple object that encapsulates a captured request.  The request key contains the ID and an
+ * Simple object that encapsulates a captured request. The request key contains the ID and an
  * optional tag.
  * 
  * @author seldred

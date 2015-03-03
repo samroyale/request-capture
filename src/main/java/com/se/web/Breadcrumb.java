@@ -1,5 +1,10 @@
 package com.se.web;
 
+/**
+ * A single breadcrumb - see the Breadcrumbs class for more info.
+ * 
+ * @author seldred
+ */
 public class Breadcrumb {
 	
 	private Page page;

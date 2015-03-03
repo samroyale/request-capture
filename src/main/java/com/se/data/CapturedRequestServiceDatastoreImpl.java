@@ -20,7 +20,8 @@ import com.google.appengine.api.datastore.Text;
 
 /**
  * Google Datastore implementation of the captured request service.  Note that this is the only
- * class that uses the App Engine API.
+ * class that uses the App Engine API, taking care of converting CapturedRequest instances to
+ * Datastore Entities and vice-versa.
  * 
  * @author seldred
  */

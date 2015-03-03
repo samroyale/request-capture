@@ -13,6 +13,11 @@ import com.se.data.CapturedRequestService;
 import com.se.data.CapturedRequestServiceDatastoreImpl;
 import com.se.data.TagCount;
 
+/**
+ * Servlet that retrieves the most popular tags from the last n requests.
+ * 
+ * @author seldred
+ */
 @SuppressWarnings("serial")
 public class PopularTagsServlet extends HttpServlet {
 

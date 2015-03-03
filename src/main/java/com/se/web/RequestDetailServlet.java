@@ -13,6 +13,11 @@ import com.se.data.CapturedRequestService;
 import com.se.data.CapturedRequestServiceDatastoreImpl;
 import com.se.data.RequestKey;
 
+/**
+ * Retrieves a single request based on the given key.
+ * 
+ * @author seldred
+ */
 @SuppressWarnings("serial")
 public class RequestDetailServlet extends HttpServlet {
 

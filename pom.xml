@@ -136,22 +136,12 @@
                         <jvmFlag>-agentlib:jdwp=transport=dt_socket,address=8000,server=y,suspend=n</jvmFlag>
                     </jvmFlags>
                 </configuration>
-            </plugin>
-            
-            <!-- Don't run the acceptance tests as part of the standard build -->
-            <!-- <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <configuration>
-                    <excludes>
-                        <exclude>**/acceptance/*Test.java</exclude>
-                    </excludes>
-                </configuration>
-            </plugin> -->
+            </plugin>            
         </plugins>
     </build>
 
     <profiles>
+        <!-- Don't run the acceptance tests as part of the standard build -->
         <profile>
             <id>unit-tests</id>
             <activation>
@@ -171,21 +161,10 @@
                 </plugins>
             </build>
         </profile>
+        
+        <!-- Use the all-tests profile to include acceptance tests -->
         <profile>
             <id>all-tests</id>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-surefire-plugin</artifactId>
-                        <configuration>
-                            <includes>
-                                <include>**/*Test.java</include>
-                            </includes>
-                        </configuration>
-                    </plugin>
-                </plugins>
-            </build>
         </profile>
     </profiles>   
     
