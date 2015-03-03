@@ -14,9 +14,10 @@ To build it:
 mvn clean install
 ```
 
-To run it:
+To start/stop it:
 ```
-mvn appengine:devserver
+mvn appengine:devserver_start
+mvn appengine:devserver_stop
 ```
 
 To deploy the latest:
