@@ -17,3 +17,6 @@ before_script:
   
 script:
   - mvn test -P all-tests
+
+after_script:
+  - mvn appengine:devserver_stop
