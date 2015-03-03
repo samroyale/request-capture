@@ -18,7 +18,8 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 /**
- * Invokes Selenium on SauceLabs to test an instance of the app running on Travis.
+ * Invokes Selenium on SauceLabs to test an instance of the app running on Travis. Can also run
+ * locally if an instance of the app is available at http://localhost:8888/.
  * 
  * Resources used:
  * * http://docs.travis-ci.com/user/gui-and-headless-browsers/

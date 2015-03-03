@@ -7,6 +7,11 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+/**
+ * Not a test - just the example code provided by Selenium.
+ * 
+ * @author seldred
+ */
 public class SeleniumExample {
 
 	public static void main(String[] args) {

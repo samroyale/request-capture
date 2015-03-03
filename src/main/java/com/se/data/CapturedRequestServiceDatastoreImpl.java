@@ -18,6 +18,12 @@ import com.google.appengine.api.datastore.KeyFactory;
 import com.google.appengine.api.datastore.Query;
 import com.google.appengine.api.datastore.Text;
 
+/**
+ * Google Datastore implementation of the captured request service.  Note that this is the only
+ * class that uses the App Engine API.
+ * 
+ * @author seldred
+ */
 public class CapturedRequestServiceDatastoreImpl implements CapturedRequestService {
 
 	private static final int MOST_RECENT_COUNT = 10;

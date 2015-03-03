@@ -16,4 +16,4 @@ before_script:
   - sleep 5 # give devserver some time to start
   
 script:
-  - mvn test
+  - mvn test -P all-tests

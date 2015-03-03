@@ -1,5 +1,10 @@
 package com.se.data;
 
+/**
+ * Simple value object that holds a count for the given tag.
+ *   
+ * @author seldred
+ */
 public class TagCount {
 
 	private String tag;
@@ -15,15 +20,7 @@ public class TagCount {
 		return tag;
 	}
 
-	public void setTag(String tag) {
-		this.tag = tag;
-	}
-
 	public int getCount() {
 		return count;
-	}
-
-	public void setCount(int count) {
-		this.count = count;
 	}
 }
