@@ -166,7 +166,32 @@
         <profile>
             <id>all-tests</id>
         </profile>
-    </profiles>   
+        
+        <!-- Travis profile that runs the acceptance tests AND measures code coverage -->
+        <profile>
+            <id>travis</id>
+            <activation>
+                <property>
+        	        <name>env.TRAVIS</name>
+        			<value>true</value>
+        		</property>
+        	</activation>
+			<build>
+  				<plugins>
+    				<plugin>
+      					<groupId>org.jacoco</groupId>
+      					<artifactId>jacoco-maven-plugin</artifactId>
+      					<version>0.7.5-SNAPSHOT</version>
+    				</plugin>
+    				<plugin>
+      					<groupId>org.eluder.coveralls</groupId>
+      					<artifactId>coveralls-maven-plugin</artifactId>
+      					<version>3.0.1</version>
+    				</plugin>
+ 				</plugins>
+			</build>
+		</profile>
+    </profiles>
     
     <repositories>
         <repository>
