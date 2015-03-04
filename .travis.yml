@@ -15,7 +15,7 @@ before_script:
   - mvn appengine:devserver_start
   
 script:
-  - mvn test -P all-tests
+  - mvn test
 
 after_success:
   - mvn jacoco:report coveralls:jacoco
