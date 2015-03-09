@@ -2,22 +2,30 @@ package com.se.web;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.entry;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.verify;
 
-import java.io.BufferedReader;
-import java.io.StringReader;
-import java.util.Enumeration;
-import java.util.Vector;
+import java.util.LinkedHashMap;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.junit.Before;
 import org.junit.Test;
+import org.mockito.Mockito;
 
 import com.se.data.CapturedRequest;
 
 public class CapturedRequestBuilderTest {
 
+	private Map<String, String> headers;
+	
+	@Before
+	public void setup() {
+		headers = new LinkedHashMap<>();
+		headers.put("header1", "value1");
+		headers.put("header2", "value2");
+	}
+	
 	@Test
 	public void buildsCapturedRequestWithoutQueryString() throws Exception {
 		HttpServletRequest httpRequest = aMockedHttpRequestWithoutQueryString();
@@ -52,35 +60,31 @@ public class CapturedRequestBuilderTest {
 	}
 
 	private HttpServletRequest aMockedHttpRequestWithoutQueryString() throws Exception {
-		return aMockedHttpRequest("POST", "/capture/this/request", null);
+		return MockRequestBuilder.anInstance()
+				.withMethod("POST")
+				.withUri("/capture/this/request")
+				.withHeaders(headers)
+				.withBody("unit testing is great\n")
+				.build();
 	}
 	
 	private HttpServletRequest aMockedHttpRequestWithQueryString() throws Exception {
-		return aMockedHttpRequest("POST", "/capture/this/request", "some=value");
+		return MockRequestBuilder.anInstance()
+				.withMethod("POST")
+				.withUri("/capture/this/request")
+				.withQueryString("some=value")
+				.withHeaders(headers)
+				.withBody("unit testing is great\n")
+				.build();
 	}
 	
 	private HttpServletRequest aMockedHttpRequestWithoutTag() throws Exception {
-		return aMockedHttpRequest("GET", "/capture", "some=value");
-	}
-	
-	private HttpServletRequest aMockedHttpRequest(String method, String uri, String queryString) throws Exception {
-		HttpServletRequest httpRequest = mock(HttpServletRequest.class);
-		when(httpRequest.getMethod()).thenReturn(method);
-		when(httpRequest.getRequestURI()).thenReturn(uri);
-		when(httpRequest.getQueryString()).thenReturn(queryString);
-		when(httpRequest.getHeaderNames()).thenReturn(getHeadersEnumeration());
-		when(httpRequest.getHeader("header1")).thenReturn("value1");
-		when(httpRequest.getHeader("header2")).thenReturn("value2");
-		StringReader in = new StringReader("unit testing is great");
-		when(httpRequest.getReader()).thenReturn(new BufferedReader(in));
-		return httpRequest;
-	}
-	
-	public Enumeration<String> getHeadersEnumeration() {
-		// going back a bit here!
-		Vector<String> v = new Vector<>();
-		v.add("header1");
-		v.add("header2");
-		return v.elements();
+		return MockRequestBuilder.anInstance()
+				.withMethod("GET")
+				.withUri("/capture")
+				.withQueryString("some=value")
+				.withHeaders(headers)
+				.withEmptyBody()
+				.build();
 	}
 }
