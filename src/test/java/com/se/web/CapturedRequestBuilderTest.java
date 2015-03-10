@@ -2,7 +2,6 @@ package com.se.web;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.entry;
-import static org.mockito.Mockito.verify;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -11,7 +10,6 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.mockito.Mockito;
 
 import com.se.data.CapturedRequest;
 
@@ -34,8 +32,10 @@ public class CapturedRequestBuilderTest {
 		assertThat(request.getMethod()).isEqualTo("POST");
 		assertThat(request.getUrl()).isEqualTo("/capture/this/request");
 		assertThat(request.getTag()).isEqualTo("this");
-		assertThat(request.getBody()).isEqualTo("unit testing is great\n"); // always ends with new line
-		assertThat(request.getHeadersAsString()).isEqualTo("header1: value1\nheader2: value2\n");
+		assertThat(request.getBody())
+				.isEqualTo("gotta love unit testing!\n"); // always ends with new line
+		assertThat(request.getHeadersAsString())
+				.isEqualTo("header1: value1\nheader2: value2\n"); // always ends with new line
 		assertThat(request.getHeaders()).contains(entry("header1", "value1"),
 				entry("header2", "value2"));
 	}
@@ -64,17 +64,15 @@ public class CapturedRequestBuilderTest {
 				.withMethod("POST")
 				.withUri("/capture/this/request")
 				.withHeaders(headers)
-				.withBody("unit testing is great\n")
+				.withBody("gotta love unit testing!")
 				.build();
 	}
 	
 	private HttpServletRequest aMockedHttpRequestWithQueryString() throws Exception {
 		return MockRequestBuilder.anInstance()
-				.withMethod("POST")
+				.withMethod("GET")
 				.withUri("/capture/this/request")
 				.withQueryString("some=value")
-				.withHeaders(headers)
-				.withBody("unit testing is great\n")
 				.build();
 	}
 	
@@ -83,8 +81,6 @@ public class CapturedRequestBuilderTest {
 				.withMethod("GET")
 				.withUri("/capture")
 				.withQueryString("some=value")
-				.withHeaders(headers)
-				.withEmptyBody()
 				.build();
 	}
 }

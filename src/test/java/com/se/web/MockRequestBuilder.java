@@ -6,6 +6,7 @@ import static org.mockito.Mockito.when;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.StringReader;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Vector;
 
@@ -19,9 +20,9 @@ public class MockRequestBuilder {
 	
 	private String queryString;
 	
-	private String body;
+	private String body = "";
 	
-	private Map<String, String> headers;
+	private Map<String, String> headers = new HashMap<>();
 	
 	private MockRequestBuilder() {
 		// use anInstance()
@@ -48,11 +49,6 @@ public class MockRequestBuilder {
 	
 	MockRequestBuilder withBody(String body) {
 		this.body = body;
-		return this;
-	}
-
-	MockRequestBuilder withEmptyBody() {
-		this.body = "";
 		return this;
 	}
 

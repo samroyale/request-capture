@@ -21,7 +21,15 @@ import com.se.data.RequestKey;
 @SuppressWarnings("serial")
 public class RequestDetailServlet extends HttpServlet {
 
-	private CapturedRequestService capturedRequestService = new CapturedRequestServiceDatastoreImpl();
+	private CapturedRequestService capturedRequestService;
+
+	public RequestDetailServlet() {
+		capturedRequestService = new CapturedRequestServiceDatastoreImpl();
+	}
+	
+	public RequestDetailServlet(CapturedRequestService capturedRequestService) {
+		this.capturedRequestService = capturedRequestService;
+	}
 	
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)

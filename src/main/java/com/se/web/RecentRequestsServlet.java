@@ -21,9 +21,15 @@ import com.se.data.CapturedRequestServiceDatastoreImpl;
 @SuppressWarnings("serial")
 public class RecentRequestsServlet extends HttpServlet {
 
-	//private static final String URL_ENCODING = "UTF-8";
+	private CapturedRequestService capturedRequestService;
 	
-	private CapturedRequestService capturedRequestService = new CapturedRequestServiceDatastoreImpl();
+	public RecentRequestsServlet() {
+		capturedRequestService = new CapturedRequestServiceDatastoreImpl();
+	}
+	
+	public RecentRequestsServlet(CapturedRequestService capturedRequestService) {
+		this.capturedRequestService = capturedRequestService;
+	}
 	
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
